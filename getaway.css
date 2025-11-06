@@ -12,7 +12,7 @@ body, html {
 
 /* NAVBAR */
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -22,6 +22,7 @@ body, html {
   padding: 20px 60px;
   background: rgba(0, 0, 0);
   color: white;
+  z-index: 1;
 }
 
 .logo {
@@ -142,8 +143,8 @@ body, html {
 }
 
 .social-links img {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   filter: brightness(0) invert(1);
   cursor: pointer;
   transition: transform 0.3s;
