@@ -10,19 +10,32 @@ body, html {
   width: 100%;
 }
 
+h1, h2, h3 {
+    color: white;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
 /* NAVBAR */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 4em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
   background: rgba(0, 0, 0);
   color: white;
-  z-index: 1;
+  z-index: 10;
 }
 
 .logo {
@@ -89,7 +102,6 @@ body, html {
   position: relative;
 }
 
-
 .overlay {
   background-color: rgba(0, 60, 80, 0.4);
   width: 100%;
@@ -132,64 +144,70 @@ body, html {
   background-color: #00a68b;
 }
 
-/* ABOUT TEXT */
-.about-text p {
-    font-size: 16px;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: #e8e8e8;
+/* ABOUT PAGE */
+.about {
+    margin-top: 4em;
+    background: url('hero-carrauntoohil-1.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
 }
-  
-.about-text strong {
-    color: #ffffff;
+
+.about-text p {
+    margin-top: 2em;
+    margin-bottom: 15px;
+    max-width: 900px;
+    line-height: 1.6;
+    color: white;
+    font-size: 1.1em;
 }
   
 /* TEAM SECTION */
 .team-section {
-    margin-top: 60px;
+    margin-top: 2em;
+    max-width: 900px;
 }
   
-  .team-section h2 {
-    font-size: 48px;
+.team-section h2 {
     font-weight: 700;
     margin-bottom: 40px;
     line-height: 1.1;
-  }
+    color: white;
+}
   
-  .team-cards {
+.team-cards {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
-  }
+}
   
-  .team-card {
+.team-card {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 20px;
     width: 260px;
     text-align: center;
     backdrop-filter: blur(4px);
-  }
+}
   
-  .team-card img {
+.team-card img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-bottom: 15px;
-  }
+}
   
-  .team-card h3 {
+.team-card h3 {
     color: #fff;
     margin-bottom: 8px;
-  }
+}
   
-  .team-card p {
-    color: #ddd;
+.team-card p {
+    color: #fff;
     font-size: 14px;
     margin-bottom: 15px;
-  }
+}
   
-  .role-btn {
+.role-btn {
     background-color: #006e6b;
     color: white;
     border: none;
@@ -197,11 +215,11 @@ body, html {
     border-radius: 20px;
     font-weight: 500;
     cursor: pointer;
-  }
+}
   
-  .role-btn:hover {
+.role-btn:hover {
     background-color: #009387;
-  }
+}
 
 /* SOCIAL ICONS */
 .social-links {
