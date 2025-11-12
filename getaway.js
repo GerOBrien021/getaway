@@ -1,4 +1,4 @@
-/* Contact Form */
+/* Contact Us Form */
 contactUsBtn = document.getElementById('contact-us-btn');
 
 function processMessage(event) {
@@ -13,7 +13,15 @@ function processMessage(event) {
     if (name && email && message) {
         alert('Thank you!')
     }
+
+    resetContactForm();
 } 
+
+function resetContactForm() {
+    document.getElementById('name').value = "";
+    document.getElementById('email').value = "";
+    document.getElementById('message').value = "";
+}
 
 contactUsBtn.addEventListener('click', processMessage);
 
