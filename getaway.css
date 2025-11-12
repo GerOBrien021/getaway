@@ -117,24 +117,26 @@ h2 {
   padding-left: 100px;
 }
 
-.hero-content {
+.content {
   color: white;
   max-width: 600px;
 }
 
-.hero-content h1 {
+.content h1 {
   font-size: 64px;
   line-height: 1.1;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-.hero-content p {
-  font-size: 16px;
-  margin-bottom: 30px;
+.content p {
+  font-size: 1.25em;
+  margin-bottom: 2e;
   color: #e2e2e2;
 }
 
+
+/* HOME PAGE */
 .book-btn {
   background-color: #008c7a;
   color: white;
@@ -150,16 +152,6 @@ h2 {
 }
 
 /* ABOUT PAGE */
-.about {
-    background: url('hero-carrauntoohil-1.jpg') no-repeat center center/cover;
-    height: 100vh;
-    position: relative;
-}
-
-.about .content {
-    margin-top: 4em;
-}
-
 .about-text p {
     margin-top: 2em;
     margin-bottom: 15px;
@@ -229,29 +221,62 @@ h2 {
     background-color: #009387;
 }
 
-/* CONTACT PAGE */
-.contact {
-    background: url('hero-carrauntoohil-1.jpg') no-repeat center center/cover;
-    height: 100vh;
-    position: relative;
-}
 
-.contact .content {
-    margin-top: 4em;
-}
-
+/* CONTACT FORM */
 .contact-form {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    max-width: 900px;
-    line-height: 1.6;
-    color: white;
-    font-size: 1.1em;
-}
-
-.contact-form input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(4px);
+  }
+  
+  .contact-form label {
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
     width: 100%;
-}
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: #ddd;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: 2px solid #00b3a4;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  .contact-form button {
+    background-color: #006e6b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background-color: #009387;
+  }
+
+
 
 /* SOCIAL ICONS */
 .social-links {
