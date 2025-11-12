@@ -10,18 +10,6 @@ body, html {
   width: 100%;
 }
 
-h1, h2, h3 {
-    color: white;
-}
-
-h1 {
-    font-size: 2em;
-}
-
-h2 {
-    font-size: 1.8em;
-}
-
 /* NAVBAR */
 .navbar {
   position: fixed;
@@ -36,6 +24,10 @@ h2 {
   background: rgba(0, 0, 0);
   color: white;
   z-index: 10;
+}
+
+.navbar h1 {
+    font-size: 2em;
 }
 
 .navbar nav {
@@ -102,53 +94,58 @@ h2 {
 
 /* HERO SECTION */
 .hero {
-  background: url('hero-carrauntoohil-1.jpg') no-repeat center center/cover;
-  height: 100vh;
-  position: relative;
+    background: url('hero-carrauntoohil-1.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
 }
 
 .overlay {
-  background-color: rgba(0, 60, 80, 0.4);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 100px;
+    background-color: rgba(0, 60, 80, 0.4);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 100px;
 }
 
 .content {
-  color: white;
-  max-width: 600px;
+    max-width: 900px;
+    margin-top: 6em;
+    color: white;
 }
 
 .content h1 {
-  font-size: 64px;
-  line-height: 1.1;
-  font-weight: 700;
-  margin-bottom: 20px;
+    font-size: 4rem;
+    line-height: 1.1em;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
 }
 
 .content p {
-  font-size: 1.25em;
-  margin-bottom: 2e;
-  color: #e2e2e2;
+    font-size: 1em;
+    margin-bottom: 2em;
+    color: #e2e2e2;
 }
 
 
 /* HOME PAGE */
+.home-text {
+    font-size: 1.25em;
+}
+
 .book-btn {
-  background-color: #008c7a;
-  color: white;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
+    background-color: #008c7a;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .book-btn:hover {
-  background-color: #00a68b;
+    background-color: #00a68b;
 }
 
 /* ABOUT PAGE */
@@ -227,6 +224,7 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 600px;
     background: rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: 15px;
@@ -258,6 +256,10 @@ h2 {
   .contact-form textarea:focus {
     outline: 2px solid #00b3a4;
     background: rgba(255, 255, 255, 0.25);
+  }
+
+  .contact-form textarea {
+    max-width: 100%;
   }
   
   .contact-form button {
