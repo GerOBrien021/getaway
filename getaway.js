@@ -25,3 +25,21 @@ function resetContactForm() {
 
 contactUsBtn.addEventListener('click', processMessage);
 
+/* Destination Recommendations */
+const term = document.getElementById('search-term').value.trim().toLowerCase();
+const searchBtn = document.getElementById('search-btn');
+const clearBtn = document.getElementById('clear-btn');
+const container = document.getElementById('recommendations-container');
+
+function recommendDestinations() {
+
+
+
+
+
+} /* end of fn recommendDestinations */
+
+
+
+
+searchBtn.addEventListener('click', recommendDestinations);
