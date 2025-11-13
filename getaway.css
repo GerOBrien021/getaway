@@ -148,6 +148,21 @@ body, html {
     background-color: #00a68b;
 }
 
+/* RECOMMENDATIONS */
+.recommendations {
+    position: absolute;
+    top: 120px;
+    right: 60px;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 20;
+  }
+  
+  .recommendations .show {
+    display: flex;
+  }
+
 /* ABOUT PAGE */
 .about-text p {
     margin-top: 2em;
