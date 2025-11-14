@@ -1,4 +1,4 @@
-/* Contact Us Form */
+/* CONTACT US FORM */
 contactUsBtn = document.getElementById('contact-us-btn');
 
 function processMessage(event) {
@@ -25,21 +25,29 @@ function resetContactForm() {
 
 contactUsBtn.addEventListener('click', processMessage);
 
-/* Destination Recommendations */
+
+/* DESTINATION RECOMMENDATIONS */
 const term = document.getElementById('search-term').value.trim().toLowerCase();
 const searchBtn = document.getElementById('search-btn');
 const clearBtn = document.getElementById('clear-btn');
 const container = document.getElementById('recommendations-container');
 
-function recommendDestinations() {
+function showRecommendations() {
+    container.innerHTML = '';
 
+    container.innerHTML += `<div class="recommendation-card">`;
+    container.innerHTML += `<img src="./sydney.jpg" alt="Sydney" />`;
+    container.innerHTML += `<h3>Sydney, Australia</h3>`;
+    container.innerHTML += `<p>A beautiful coastal city with a relaxed atmosphere, featuring the Sydney Opera House, Harbour Bridge, and stunning beaches.</p>`;
+    container.innerHTML += `<button>Visit</button>`;
+    container.innerHTML += `</div>`;
 
+} /* end of fn showRecommendations */
 
+function clearRecommendations() {
+    term.value = '';
+    container.innerHTML = '';
+}
 
-
-} /* end of fn recommendDestinations */
-
-
-
-
-searchBtn.addEventListener('click', recommendDestinations);
+searchBtn.addEventListener('click', showRecommendations);
+clearBtn.addEventListener('click', clearRecommendations);
