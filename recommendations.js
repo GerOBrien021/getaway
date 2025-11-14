@@ -4,9 +4,15 @@ const clearBtn = document.getElementById('clear-btn');
 
 function showRecommendations() {
     const term = document.getElementById('search-term').value.trim().toLowerCase();
-    const container = document.getElementById('recommendations-container');
+    const recommendations = document.getElementById('recommendations-container');
 
-    
+    fetch('travel_recommendation_api.json')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => {
+        console.error('Error:', error);
+        recommendations.innerHTML = 'An error occurred while fetching data.';
+    });
 
     if (term) {
         const card = document.createElement('div');
@@ -19,7 +25,7 @@ function showRecommendations() {
           </div>
           `;
     
-        container.appendChild(card);
+        recommendations.appendChild(card);
     }
 
 } /* end of fn showRecommendations */
