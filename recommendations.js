@@ -6,14 +6,21 @@ function showRecommendations() {
     const term = document.getElementById('search-term').value.trim().toLowerCase();
     const container = document.getElementById('recommendations-container');
 
-    container.innerHTML = '';
+    
 
-    container.innerHTML += `<div class="recommendation-card">`;
-    container.innerHTML += `<img src="./sydney.jpg" alt="Sydney" />`;
-    container.innerHTML += `<h3>Sydney, Australia</h3>`;
-    container.innerHTML += `<p>A beautiful coastal city with a relaxed atmosphere, featuring the Sydney Opera House, Harbour Bridge, and stunning beaches.</p>`;
-    container.innerHTML += `<button>Visit</button>`;
-    container.innerHTML += `</div>`;
+    if (term) {
+        const card = document.createElement('div');
+        card.classList.add('recommendation-card');
+        card.innerHTML = `
+          <img src="./sydney.jpg" alt="Sydney" />
+          <h3>${term}</h3>
+          <p>A beautiful coastal city with a relaxed atmosphere, featuring the Sydney Opera House, Harbour Bridge, and stunning beaches.</p>
+          <button>Visit</button>
+          </div>
+          `;
+    
+        container.appendChild(card);
+    }
 
 } /* end of fn showRecommendations */
 
