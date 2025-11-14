@@ -8,12 +8,22 @@ function showRecommendations() {
 
     fetch('travel_recommendation_api.json')
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+        if (data[term]) {
+            console.log(data[term]);
+        }
+        
+        /* console.log(data); */
+    })
     .catch(error => {
         console.error('Error:', error);
         recommendations.innerHTML = 'An error occurred while fetching data.';
     });
 
+
+
+
+    /*
     if (term) {
         const card = document.createElement('div');
         card.classList.add('recommendation-card');
@@ -27,6 +37,7 @@ function showRecommendations() {
     
         recommendations.appendChild(card);
     }
+    */
 
 } /* end of fn showRecommendations */
 
