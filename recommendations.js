@@ -18,7 +18,7 @@ function showRecommendations() {
             const destinationTypes = Object.getOwnPropertyNames(data);
             let destinationType = '';
 
-            /* The search term might be a substring of a destination type e.g. 'beach' instead of 'beaches.*/ 
+            /* The search term might be a substring of a destination type e.g. 'beach' instead of 'beaches'.*/ 
             destinationTypes.forEach(item => {
                 if (item.indexOf(term) != -1) {
                     destinationType = item;
@@ -29,11 +29,11 @@ function showRecommendations() {
                 console.log('Destination Type found!', destinationType);
 
                 /* Create the cards. */
-                data.destinationType.forEach(dest => {
+                data.temples.forEach(dest => {
                     const card = document.createElement('div');
                     card.classList.add('recommendation-card');
                     card.innerHTML = `
-                      <img src="${dest.imageURL}" alt="${dest.name}" />
+                      <img src="${dest.imageUrl}" alt="${dest.name}" />
                       <h3>${dest.name}</h3>
                       <p>${dest.description}</p>
                       <button>Visit</button>
