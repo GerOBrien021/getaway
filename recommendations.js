@@ -9,23 +9,29 @@ function showRecommendations() {
     fetch('travel_recommendation_api.json')
     .then(response => response.json())
     .then(data => {
-        /* First check if the search term is a country name. */
+        /* First, check if the search term is a country name. */
         const country = data.countries.find(item => item.name.toLowerCase() === term);
         if (country) {
             console.log('Country found! Here are the cities: ', country.cities);
         } else {
             /* The search term might be a destination type e.g. 'beaches' or 'temples'. */
             const destinationTypes = Object.getOwnPropertyNames(data);
+            let destinationType = '';
 
             /* The search term might be a substring of a destination type e.g. 'beach' instead of 'beaches.*/ 
             destinationTypes.forEach(item => {
                 if (item.indexOf(term) != -1) {
-                    console.log('Destination Type found!', data[item]);
+                    destinationType = item;
                 }
             })
-        }
 
+            if (destinationType) {
+                console.log('Destination Type found!', destinationType);
+            } else {
+                /* No match for the search term. */
 
+            }
+        } 
     })
     .catch(error => {
         console.error('Error:', error);
