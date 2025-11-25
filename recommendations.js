@@ -27,6 +27,22 @@ function showRecommendations() {
 
             if (destinationType) {
                 console.log('Destination Type found!', destinationType);
+
+                /* Create the cards. */
+                data.destinationType.forEach(dest => {
+                    const card = document.createElement('div');
+                    card.classList.add('recommendation-card');
+                    card.innerHTML = `
+                      <img src="${dest.imageURL}" alt="${dest.name}" />
+                      <h3>${dest.name}</h3>
+                      <p>${dest.description}</p>
+                      <button>Visit</button>
+                      </div>
+                      `;
+                
+                    recommendations.appendChild(card);
+                });
+
             } else {
                 /* No match for the search term. */
 
