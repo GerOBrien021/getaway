@@ -9,15 +9,23 @@ function showRecommendations() {
     fetch('travel_recommendation_api.json')
     .then(response => response.json())
     .then(data => {
-        /* The search term might be a substring of the property name e.g. 'beach' instead of 'beaches.*/        
-        const destinationTypes = Object.getOwnPropertyNames(data);
-        destinationTypes.forEach(item => {
-            if (item.indexOf(term) != -1) {
-                console.log(item);
-                console.log(data[item]);
+        /* First check if the search term is a country name. */
+        const country = data.countries.find(item => item.name.toLowerCase() === term);
+        if (country) {
+            console.log('Country found! Here are the cities: ', country.cities);
+        } else {
+            /* The search term might be a destination type e.g. 'beaches' or 'temples'. */
+            const destinationTypes = Object.getOwnPropertyNames(data);
 
-            }
-        })
+            /* The search term might be a substring of a destination type e.g. 'beach' instead of 'beaches.*/ 
+            destinationTypes.forEach(item => {
+                if (item.indexOf(term) != -1) {
+                    console.log('Destination Type found!', data[item]);
+                }
+            })
+        }
+
+
     })
     .catch(error => {
         console.error('Error:', error);
