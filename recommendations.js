@@ -9,11 +9,15 @@ function showRecommendations() {
     fetch('travel_recommendation_api.json')
     .then(response => response.json())
     .then(data => {
-        if (data[term]) {
-            console.log(data[term]);
-        }
-        
-        /* console.log(data); */
+        /* The search term might be a substring of the property name e.g. 'beach' instead of 'beaches.*/        
+        const destinationTypes = Object.getOwnPropertyNames(data);
+        destinationTypes.forEach(item => {
+            if (item.indexOf(term) != -1) {
+                console.log(item);
+                console.log(data[item]);
+
+            }
+        })
     })
     .catch(error => {
         console.error('Error:', error);
