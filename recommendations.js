@@ -5,6 +5,7 @@ const clearBtn = document.getElementById('clear-btn');
 function showRecommendations() {
     const term = document.getElementById('search-term').value.trim().toLowerCase();
     const recommendations = document.getElementById('recommendations-container');
+    recommendations.innerHTML = '';
 
     fetch('travel_recommendation_api.json')
     .then(response => response.json())
@@ -27,9 +28,10 @@ function showRecommendations() {
 
             if (destinationType) {
                 console.log('Destination Type found!', destinationType);
+                console.log('Type of destinationType: ', typeof destinationType);
 
                 /* Create the cards. */
-                data.temples.forEach(dest => {
+                data[destinationType].forEach(dest => {
                     const card = document.createElement('div');
                     card.classList.add('recommendation-card');
                     card.innerHTML = `
