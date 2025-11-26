@@ -64,6 +64,19 @@ function showRecommendations() {
 
             } else {
                 /* No match for the search term. */
+                console.log('Destination Type not found!', destinationType);
+                
+                const card = document.createElement('div');
+                card.classList.add('recommendation-card');
+                card.innerHTML = `
+                    <img src="./cork_city.webp" alt="Cork City" />
+                    <h3>Sorry, there were no matches!</h3>
+                    <p>We have a Special Offer on trips to Cork in Ireland!</p>
+                    <button>Visit</button>
+                    </div>
+                    `;
+            
+                recommendations.appendChild(card);
 
             }
         } 
