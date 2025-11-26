@@ -12,8 +12,25 @@ function showRecommendations() {
     .then(data => {
         /* First, check if the search term is a country name. */
         const country = data.countries.find(item => item.name.toLowerCase() === term);
+
         if (country) {
             console.log('Country found! Here are the cities: ', country.cities);
+
+            /* Create the cards. */
+            country.cities.forEach(dest => {
+                const card = document.createElement('div');
+                card.classList.add('recommendation-card');
+                card.innerHTML = `
+                    <img src="${dest.imageUrl}" alt="${dest.name}" />
+                    <h3>${dest.name}</h3>
+                    <p>${dest.description}</p>
+                    <button>Visit</button>
+                    </div>
+                    `;
+            
+                recommendations.appendChild(card);
+            });
+
         } else {
             /* The search term might be a destination type e.g. 'beaches' or 'temples'. */
             const destinationTypes = Object.getOwnPropertyNames(data);
