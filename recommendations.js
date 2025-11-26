@@ -54,25 +54,6 @@ function showRecommendations() {
         recommendations.innerHTML = 'An error occurred while fetching data.';
     });
 
-
-
-
-    /*
-    if (term) {
-        const card = document.createElement('div');
-        card.classList.add('recommendation-card');
-        card.innerHTML = `
-          <img src="./sydney.jpg" alt="Sydney" />
-          <h3>${term}</h3>
-          <p>A beautiful coastal city with a relaxed atmosphere, featuring the Sydney Opera House, Harbour Bridge, and stunning beaches.</p>
-          <button>Visit</button>
-          </div>
-          `;
-    
-        recommendations.appendChild(card);
-    }
-    */
-
 } /* end of fn showRecommendations */
 
 function clearRecommendations() {
@@ -82,3 +63,10 @@ function clearRecommendations() {
 
 searchBtn.addEventListener('click', showRecommendations);
 clearBtn.addEventListener('click', clearRecommendations);
+
+/* Pressing Enter when in the search text box should also trigger search. */
+searchBox = document.getElementById('search-term');
+searchBox.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') showRecommendations();
+});
+
